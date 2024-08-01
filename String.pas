@@ -1,29 +1,23 @@
-﻿program p2;
+﻿program BeautifulSum;
 
-var
-  s1, s2: string;
-  i: integer;
-
-begin
-  readln(s1);
-  readln(s2);
-
-  s1 := LowerCase(s1);
-  s2 := LowerCase(s2);
-
-  for i := 1 to Length(s1) do
+var i,j : Integer;
+  s : String;
+  
   begin
-    if s1[i] < s2[i] then
-    begin
-      writeln(-1);
-      exit;
-    end
-    else if s1[i] > s2[i] then
-    begin
-      writeln(1);
-      exit;
-    end;
-  end;
-
-  writeln(0);
-end.
+    
+    readln(s);
+    
+    for i := 1 to length(s) do
+     for j := 1 to length(s) - 2 do
+     begin
+        if s[j] > s [j + 2 ] then
+         swap(s[j], s[j+ 2]);
+       if s[j] not in ['1','2','3']
+       then
+         continue;
+       if s[j] = length(s) then
+         break;
+     end;
+      
+        writeln(s);
+  end.
